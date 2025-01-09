@@ -1,0 +1,170 @@
+﻿@{
+    ViewData["Title"] = "Sign In";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Sign In</title>
+    <link rel="stylesheet" href="~/css/signin.css">
+</head>
+<body>
+    <div class="container left-panel-active">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form id="signUpForm" onsubmit="handleSignUp(event)">
+                <h1>Create Account</h1>
+                <input class="feild" type="text" id="name" placeholder="Name" required />
+                <input class="feild" type="text" id="email" placeholder="Email" required />
+                <input class="feild" type="password" id="password" placeholder="Password" required />
+                <select class="select" id="gender" style="background-color: #eee; border: none; padding: 12px 15px; margin: 8px 0; width: -webkit-fill-available;" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <label>
+                    <input type="checkbox" id="terms" required />
+                    I agree to the terms and conditions
+                </label>
+                <button type="submit">Sign Up</button> 
+            </form>
+
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container">           
+            <form id="signInForm" onsubmit="handleSignIn(event)">
+                <div id="logo">
+
+                    <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8 32H0V21.9849C0 17.1239 4.0116 13.1839 8.96 13.1839H15.2V0.468341C15.2 0.251458 15.3792 0.0754376 15.6 0.0754376C15.7184 0.0754376 15.8308 0.127301 15.9068 0.216883L17.3616 1.92719C18.402 1.07577 19.74 0.563816 21.2 0.563816H22C23.442 0.563816 24.7656 1.06359 25.8 1.89654L27.2932 0.14066C27.3692 0.0514706 27.4812 0 27.6 0C27.8208 0 28 0.175628 28 0.392904V15.3896H23.36C17.528 15.3896 12.8 20.0337 12.8 25.7623V32Z" fill="#45413E" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.76 17.0569V12.0875C29.76 12.0836 29.76 12.0797 29.76 12.0758V6.79004C29.76 6.57435 29.9392 6.4 30.16 6.4C30.266 6.4 30.3676 6.44095 30.4424 6.51389L31.9576 7.98784C32.7864 7.42501 33.7936 7.09504 34.88 7.09504C35.97 7.09504 36.9808 7.42735 37.8112 7.99369L39.3176 6.52793C39.3924 6.45499 39.494 6.41404 39.6 6.41404C39.8208 6.41404 40 6.58878 40 6.80408V23.2632C40 28.0883 35.9884 32 31.04 32H14.4V25.7938C14.4 20.969 18.4116 17.0569 23.36 17.0569H29.76Z" fill="#45413E" />
+                    </svg>
+
+                    <h1></h1>Petcare <br>  Store</h1>
+                </div>
+                @* <h1>Sign In</h1> *@
+                <input class="feild" type="text" id="signInEmail" placeholder="Email" required />
+                <input class="feild" type="password" id="signInPassword" placeholder="Password" required />
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+        <!-- Overlay Panel to Switch Between Sign Up and Sign In -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="class1 overlay-panel overlay-right" style="display:none;">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us, please login with your personal info</p>
+                    <button class="ghost" id="signInBtn">Sign In</button>
+                    <div class="card-image"><img src="https://ouch-cdn2.icons8.com/DF-XRInvbvWS9fQSpWc_SegC3meXZK8BmE-PjrdrF3Q/rs:fit:368:396/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNzI3/LzQyYWIyNzliLWJj/ZDgtNGEyMC04MGRi/LTk3MzU4YWFmNTVk/OS5wbmc.png"></div>
+
+
+                </div>
+                <div class="class2 overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="ghost" id="signUpBtn">Sign Up</button>
+                    <div class="card-image"><img src="https://ouch-cdn2.icons8.com/qPvaAv2gxwM3l0z7dl_eoh9v6h58HlzewBUfEgX6AZE/rs:fit:368:386/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTIv/ZmM4YjNlYmItMDNj/Ni00NGM3LTliNGUt/YTUyOWUzOGU4NTE2/LnBuZw.png"></div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    @* <script src="~/lib/jquery/dist/jquery.js"></script> *@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="~/js/login.js"></script>
+
+    <script>
+        $.ajax({
+            url: 'http://localhost:5205/api/pets',  // Replace with your API endpoint
+            type: 'GET',
+            dataType: 'json',  // Expecting a JSON response
+            success: function(response) {
+                console.log(response);  // Logs all pets returned by the API
+                // You can render the pet data in the UI here
+            },
+            error: function(xhr, status, error) {
+                console.error("Error fetching pets:", error);
+            }
+        });
+        // Function to handle Sign In form submission
+        function handleSignIn(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const email = document.getElementById('signInEmail').value;
+            const password = document.getElementById('signInPassword').value;
+
+            const data = { Email: email, Password: password };
+
+            // Send POST request to the API
+            $.ajax({
+                url: '@Url.Action("SignIn", "Auth")',  // The API endpoint for sign-in
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(response) {
+                    alert(response)
+                    // alert("Sign-in successful!");
+                    window.location.href = "Home/homepage";
+
+                    // Optionally, redirect or show success message
+                },
+                error: function(xhr, status, error) {
+                    alert("Error: " + xhr.responseText);
+                }
+            });
+        }
+         function handleSignUp(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            
+            const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+                const gender = document.getElementById('gender').value;
+            const password = document.getElementById('password').value;
+
+            const data = { Email: email, Password: password,  Name:name, gender: gender };
+
+            // Send POST request to the API
+            $.ajax({
+                url: '@Url.Action("SignUp", "Auth")',  // The API endpoint for sign-in
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(response) {
+                    alert(response)
+                    // alert("Sign-in successful!");
+                    window.location.href = "Home/homepage";
+
+                    // Optionally, redirect or show success message
+                },
+                error: function(xhr, status, error) {
+                    alert("Error: " + xhr.responseText);
+                }
+            });
+        }
+
+        // Switch to Sign Up Form on Click
+        // document.getElementById('signUpBtn').addEventListener('click', function() {
+        //     document.querySelector('.container').classList.add('right-panel-active');
+        // });
+
+        // Switch to Sign In Form on Click
+        // document.getElementById('signInBtn').addEventListener('click', function() {
+        //     document.querySelector('.container').classList.remove('right-panel-active');
+        // });
+    </script>
+
+</body>
+</html>
+
+
+

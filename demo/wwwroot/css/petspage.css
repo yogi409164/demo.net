@@ -1,0 +1,156 @@
+﻿/* General product card styles */
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    /*width: 250px;*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container */
+.product-image-container {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Product details */
+.product-details {
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.product-category, .product-price {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Action buttons */
+.product-actions {
+    margin-top: 15px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    button:active {
+        background-color: #1e7e34;
+    }
+
+/* Add to Wishlist button - Custom Style */
+.add-to-wishlist {
+    background-color: #ff9800;
+}
+
+    .add-to-wishlist:hover {
+        background-color: #e68900;
+    }
+
+    .add-to-wishlist:active {
+        background-color: #d77d00;
+    }
+
+/* Add to Cart button - Custom Style */
+.add-to-cart {
+    background-color: #007bff;
+}
+
+    .add-to-cart:hover {
+        background-color: #0069d9;
+    }
+
+    .add-to-cart:active {
+        background-color: #0056b3;
+    }
+
+
+/*search */
+
+/* Styling for the search container */
+.search-container {
+    max-width: 600px; /* Limit the maximum width of the search bar */
+    margin: 20px auto; /* Center align the search bar */
+    padding: 10px;
+    position: relative;
+}
+
+/* Input field style */
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid #709ddf;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px #709ddf66;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+    /* Input field on focus */
+    #searchInput:focus {
+        border-color: #5cb85c; /* Green border on focus */
+        background-color: #fff; /* White background on focus */
+        box-shadow: 0 0 8px rgba(0, 204, 0, 0.3); /* Green glow on focus */
+    }
+
+    /* Optional: Add a search icon inside the search box */
+    #searchInput::placeholder {
+        color: #aaa; /* Placeholder color */
+        font-style: italic; /* Italicize the placeholder */
+    }
+
+/* Style for search icon if needed (optional) */
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: xx-large;
+    color: #709ddf;
+    cursor: pointer;
+}
+
+/* Responsive design: adjust search box width on smaller screens */
+@media (max-width: 576px) {
+    .search-container {
+        width: 90%; /* Make it a bit smaller on small screens */
+    }
+
+    #searchInput {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+
