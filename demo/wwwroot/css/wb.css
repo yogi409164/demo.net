@@ -49,7 +49,7 @@ default .select2-selection--single .select2-selection__arrow {
     font-size: small;
 }
 .r_pad {
-     padding-right: 5px;
+     padding-right: 15px;
 }
 
 
@@ -114,4 +114,7 @@ default .select2-selection--single .select2-selection__arrow {
 a {
     color: #0d6efd;
     text-decoration: underline;
+}
+.cursor {
+    cursor: pointer;
 }
