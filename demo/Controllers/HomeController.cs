@@ -31,7 +31,10 @@ namespace demo.Controllers
         {
             return View();
         }
-
+        public IActionResult Wbregister()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

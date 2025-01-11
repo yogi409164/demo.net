@@ -1,0 +1,766 @@
+﻿@{
+    ViewData["Title"] = "Wbregister";
+    Layout = null;
+}
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/wb.css" />
+    <link rel="stylesheet" href="~/css/common.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container-fluid con_box">
+        <div class="row">
+            <div class="col-md-9">               
+                <div class="col-md-12 main headt">
+                    <div> <h3 class="title">Weightbride Register</h3></div>
+                    <div class="d-flex" style="padding-top: 1%;">
+                        <div class="text-center r_pad">
+                            <div >
+                                <img src="~/src/new-document.png" style="width:22px;" />
+                            </div>
+                            <div>
+                                <p class="font_s">New</p>
+                            </div>
+                        </div>
+                        <div class="text-center r_pad">
+                            <div >
+                                <img src="~/src/diskette.png" style="width:22px;" />
+                            </div>
+                            <div>
+                                <p class="font_s">Save</p>
+                            </div>
+                        </div>
+                        <div class="text-center r_pad">
+                            <div >
+                                <img src="~/src/printer.png" style="width:22px;" />
+                            </div>
+                            <div>
+                                <p class="font_s">Print</p>
+                            </div>
+                        </div>
+                        <div class="text-center r_pad">
+                            <div >
+                                <img src="~/src/refresh-page-option.png" style="width:22px;" />
+                            </div>
+                            <div>
+                                <p class="font_s">Refresh</p>
+                            </div>
+                        </div>
+                        <div class="text-center r_pad">
+                            <div >
+                                <img src="~/src/close.png" style="width:22px;" />
+                            </div>
+                            <div>
+                                <p class="font_s">Close</p>
+                            </div>
+                        </div>
+                        <div class="text-center r_pad">
+                            <div>
+                               <a href="#">Download</a>
+                            </div>
+                            <div>
+                                <p class="font_s">Download Log</p>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+                <div class="row main">
+                    <!-- Document No -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="documentNo">Document No <span style="color: red; display: none;">*</span></label>
+                            </div>                           
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="documentNo" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Document Date -->
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="documentDate">
+                                    Document Date
+                                    <span class="required-star" style="color: red; display: inline;">*</span>
+                                </label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="documentDate" placeholder="" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select Documents (Multi-Select Dropdown) -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="gateentryno">Gate Entry No <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="gateentryno" required>
+                                        <option value=""></option>
+                                        <option value="doc1">Gate 1</option>
+                                        <option value="doc2">Gate 2</option>
+                                        <option value="doc3">Gate 3</option>
+                                        <option value="doc4">Gate 4</option>
+                                        <option value="doc5">Gate 5</option>
+                                        <option value="doc6">Gate 6</option>
+                                        <option value="doc7">Gate 7</option>
+                                        <option value="doc8">Gate 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="gate_entry_type">Gate Entry Type <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="gate_entry_type">
+                                        <option value=""></option>
+                                        <option value="doc1">Type 1</option>
+                                        <option value="doc2">Type 2</option>
+                                        <option value="doc3">Type 3</option>
+                                        <option value="doc4">Type 4</option>
+                                        <option value="doc5">Type 5</option>
+                                        <option value="doc6">Type 6</option>
+                                        <option value="doc7">Type 7</option>
+                                        <option value="doc8">Type 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="Department">Departmen <span style="color: red; display: none;">*</span>t</label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="Department">
+                                        <option value=""></option>
+                                        <option value="doc1">Department 1</option>
+                                        <option value="doc2">Department 2</option>
+                                        <option value="doc3">Department 3</option>
+                                        <option value="doc4">Department 4</option>
+                                        <option value="doc5">Department 5</option>
+                                        <option value="doc6">Department 6</option>
+                                        <option value="doc7">Department 7</option>
+                                        <option value="doc8">Department 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="Outlet">Outlet <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="Outlet">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="flow_classify">Flow Classify <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="flow_classify">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="gate">Gate <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="gate">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                     <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="Weighbridge">Weighbridge <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="Weighbridge">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="weighing_type">Weighing Type <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="weighing_type">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                     <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="agent">Agent <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="agent">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                             <div class="col-md-4">
+                                <label class="inputlabel" for="sales_executive">Sales Executive <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="sales_executive">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="vehicle">Vehicle <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="vehicle">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">                           
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="outside_vehicle">Outside Vehicle <span style="color: red; display: none;">*</span></label>
+                            </div>                           
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="outside_vehicle" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="ven_cus">Vender / Customer <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="ven_cus">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="city">Village / City <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="city">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="bill_no">Bill No <span style="color: red; display: none;">*</span></label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="bill_no" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- br -->
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="bill_date">Bill Date <span style="color: red; display: none;">*</span></label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="bill_date" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="Narration">Narration <span style="color: red; display: none;">*</span></label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Narration" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="gate_odate">Gate In Date <span style="color: red; display: none;">*</span></label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="gate_odate" placeholder="" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="gateidate">Gate Out Date <span style="color: red; display: none;">*</span></label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="gateidate" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- br -->
+                </div>
+                <div class="row main">
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="gross_weight">
+                                    Gross Weight (In Qtls)
+                                    <span style="color: red; display: none;">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control text-right" id="gross_weight" placeholder="0.00" oninput="formatWeight(this)" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="tare_weight">
+                                    Tare Weight (In Qtls)
+                                    <span style="color: red; display: none;">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control text-right" id="tare_weight" placeholder="0.00" oninput="formatWeight(this)" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="net_weight">
+                                    Net Weight (In Qtls)
+                                    <span style="color: red; display: none;">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control text-right" id="net_weight" placeholder="0.00" oninput="formatWeight(this)" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="gross_date_time">
+                                    Gross Date Time
+                                    <span style="color: red; display: none;">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="gross_date_time" placeholder=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="tare_date_time">
+                                    Tare Date Time
+                                    <span style="color: red; display: none;">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control text-right" id="tare_date_time" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="primt_layer_name">Print Layout Name<span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="primt_layer_name">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="weightbridge_nos">Weightbridge Nos<span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="weightbridge_nos">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="inputlabel" for="pending_vech">Pending Vehicle <span style="color: red; display: none;">*</span></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" id="pending_vech">
+                                        <option value=""></option>
+                                        <option value="doc1">Document 1</option>
+                                        <option value="doc2">Document 2</option>
+                                        <option value="doc3">Document 3</option>
+                                        <option value="doc4">Document 4</option>
+                                        <option value="doc5">Document 5</option>
+                                        <option value="doc6">Document 6</option>
+                                        <option value="doc7">Document 7</option>
+                                        <option value="doc8">Document 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- table br -->
+                </div>
+                <div class="row main table-container">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th class="product-header">Product</th>
+                                <th class="product-header">Unit</th>
+                                <th class="product-header">Quantiy</th>
+                                <th class="product-header">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="product-row">
+                                <td class="product-data">Example Product 1</td>
+                                <td class="product-data">pcs</td>
+                                <td class="product-data">100</td>
+                                <td class="product-data">Sample remark</td>
+                            </tr>                          
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+            <div class="row main">
+                <div class="c_box">
+                    <div>Camera 1</div>
+                    <div class="container camera_box">
+                       @* // <p>Content for Camera 1</p> *@
+                    </div>
+                </div>
+                <div class="c_box">
+                    <div>Camera 2</div>
+                    <div class="container camera_box">
+                        @* <p>Content for Camera 2</p> *@
+                    </div>
+                </div>
+                <div class="c_box">
+                    <div>Camera 3</div>
+                    <div class="container camera_box">
+                        @* <p>Content for Camera 3</p> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <hr class="line"/>
+
+    <script>
+        $(document).ready(function() {
+
+            //
+             $('input, select').each(function() {
+                  const input = $(this);
+                  const label = $(`label[for="${input.attr('id')}"]`);
+                  const asterisk = label.find('span');
+
+                  // Initially hide the asterisk
+                  asterisk.css('display', 'none');
+
+                  // If the input/select is required, display the asterisk
+                  if (input.is('[required]')) {
+                    asterisk.css('display', 'inline'); // Make it visible and block level
+                  }
+             });
+            // Initialize Select2 on the multi-select dropdown
+            $('#gateentryno').select2({
+                placeholder: 'Gate No',
+                allowClear: true
+            });
+             $('#gate_entry_type').select2({
+                placeholder: 'For Goods',
+                allowClear: true
+            });
+             $('#Department').select2({
+                placeholder: 'MCV',
+                allowClear: true
+            });
+             $('#Outlet').select2({
+                placeholder: 'MCVHAPL',
+                allowClear: true
+            });
+              $('#flow_classify').select2({
+                placeholder: 'Gate, Weighbridge, Outwards',
+                allowClear: true
+            });
+              $('#gate').select2({
+                placeholder: 'Gate 1',
+                allowClear: true
+            });
+              $('#Weighbridge').select2({
+                placeholder: 'HM Weightbridge',
+                allowClear: true
+            });
+              $('#weighing_type').select2({
+                placeholder: 'Net Weight',
+                allowClear: true
+            });
+              $('#agent').select2({
+                placeholder: 'Direct (AP)',
+                allowClear: true
+            });
+              $('#sales_executive').select2({
+                placeholder: '0',
+                allowClear: true
+            });
+             $('#vehicle').select2({
+                placeholder: 'Enter vehile no',
+                allowClear: true
+            });
+             $('#pending_vech').select2({
+                placeholder: 'select....',
+                allowClear: true
+            });
+             $('#weightbridge_nos').select2({
+                placeholder: 'select....',
+                allowClear: true
+            });
+            $('.select2').css('width', '100%');
+        });
+    </script>
+</body>
+</html>

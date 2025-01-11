@@ -1,0 +1,117 @@
+﻿body {
+}
+.main, .cam {
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    --bs-gutter-x: 0;
+    margin-bottom: 4px;
+}
+.title {
+    margin: 12px;
+    padding: 6px;
+    font-size: xx-large;
+    color: #3662a3;
+}
+.inputlabel {
+    font-size: small;
+}
+.box {
+    padding: 10px;
+}
+#selectDocuments {
+    height: auto;
+    max-height: 150px; /* Adjust this value to control maximum height */
+    overflow-y: auto; /* Enables scrolling if options exceed max height */
+}
+.select2-selection__rendered {
+    padding: 4px 12px !important
+}
+.select2-container .select2-selection--single{
+    height: auto !important;
+}
+default .select2-selection--single .select2-selection__arrow {
+    top : 4px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {   
+    background-color: gainsboro ;
+}
+.select2 select2-container select2-container--default select2-container--focus {
+    width: 100% !important;
+    font-size: inherit !important;
+}
+.text-right {
+    text-align: right;
+}
+.headt {
+    display: flex;
+    justify-content: space-between;
+}
+.font_s {
+    font-size: small;
+}
+.r_pad {
+     padding-right: 5px;
+}
+
+
+.product-table {
+    width: 99%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 0;
+}
+
+/* Table Header Styles */
+.product-table th {
+    background-color: #3662a3;
+    color: #fffcfc;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Table Data Styles */
+.product-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Hover Effect for Rows */
+.product-table tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Border around table */
+.product-table, .product-table th, .product-table td {
+    border: 1px solid #ddd;
+}
+
+    /* Center text alignment */
+    .product-table th, .product-table td {
+        text-align: center;
+    }
+
+.table-container {
+    height: 240px; /* Adjust the height as needed */
+    overflow-y: auto;
+    display: block;
+}
+.camera_box {
+    height: 265px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(56 202 58) 0px 0px 0px 3px;
+}
+.c_box {
+    padding: 6px;
+    text-align: center;
+}
+.con_box{
+    margin-top: 5px;
+}
+.line {
+    margin: 0;
+    margin-bottom: 10px;
+}
+a {
+    color: #0d6efd;
+    text-decoration: underline;
+}
